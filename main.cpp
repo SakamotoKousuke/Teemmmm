@@ -101,6 +101,18 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 			break;
 
+        case SCORE:
+
+            // スコアの表示
+            Novice::ScreenPrintf(600, 300, "score = %d", score);
+
+            // シーンの切り替え
+            if (keys[DIK_SPACE] && !preKeys[DIK_SPACE]) {
+                SceneNo = TITLE;
+            }
+
+            break;
+
 		case GAME_PLAY:
 
             if (timer >= 0 && hp > 0)
@@ -349,17 +361,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 			break;
 
 
-		case SCORE:
-
-			// スコアの表示
-			Novice::ScreenPrintf(600, 300, "score = %d", score);
-
-			// シーンの切り替え
-			if (keys[DIK_SPACE] && !preKeys[DIK_SPACE]) {
-				SceneNo = TITLE;
-			}
-
-			break;
+		
 
 
 		}
